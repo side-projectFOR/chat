@@ -1,0 +1,8 @@
+/* 프로필 이미지 크기와 정렬 */
+.profile-img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-right: 10px;
+  }
