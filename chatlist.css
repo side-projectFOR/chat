@@ -72,3 +72,8 @@
     border-radius: 15px;
     font-size: 12px;
 }
+
+.chat-list a {
+    text-decoration: none; 
+    color: inherit;  
+}
