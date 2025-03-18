@@ -73,7 +73,7 @@ body {
 }
 
 .chat-messages .message-content {
-    background-color: #fff;
+    background-color: #92e29d;
     padding: 10px;
     border-radius: 10px;
     max-width: 70%;
@@ -91,7 +91,7 @@ body {
 }
 
 .chat-input {
-    background-color: #fff;
+    background-color: #bee5ec;
     padding: 10px;
     display: flex;
     align-items: center;
