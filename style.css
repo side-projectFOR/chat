@@ -5,6 +5,13 @@ body {
     background-color: #f0f0f0;
 }
 
+.chat-header .profile i {
+    margin-right: 15px; 
+    font-size: 20px;
+    cursor: pointer;
+    color: #555;
+}
+
 .chat-container {
     width: 100%;
     max-width: 500px;
