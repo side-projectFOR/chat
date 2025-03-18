@@ -1,0 +1,79 @@
+/* 프로필 이미지 크기와 정렬 */
+.profile-img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-right: 10px;
+  }
+  body {
+    font-family: 'Noto Sans KR', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f7f7f7;
+    
+}
+
+.chat-list {
+    list-style: none;
+    padding: 0;
+    margin: 20px auto;
+    max-width: 400px;
+    border: 1px solid rgb(212, 212, 212) ;
+}
+
+.chat-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: white;
+    padding: 12px;
+    border-bottom: 1px solid #ddd;
+    cursor: pointer;
+}
+
+.chat-item:hover {
+    background: rgb(159, 245, 180);
+    border: 1px solid #d4d4d4;
+}
+
+.profile {
+    display: flex;
+    align-items: center;
+}
+
+.profile img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.chat-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.name {
+    font-weight: bold;
+    font-size: 16px;
+    color: #333;
+}
+
+.last-message {
+    font-size: 14px;
+    color: #4a9770;
+}
+
+.badge {
+    background-color: rgb(91, 184, 119);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 15px;
+    font-size: 12px;
+}
+
+.chat-list a {
+    text-decoration: none; 
+    color: inherit;  
+}
