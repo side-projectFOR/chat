@@ -110,3 +110,31 @@ body {
     color: #555;
     font-size: 20px;
 }
+/* 조정해야하면 가운데에 띄우자 */
+.color-picker {
+    display: none;
+    position: absolute;
+    top: 60px;
+    right: 10px;
+    background: white;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.color-options {
+    display: flex;
+    gap: 10px;
+}
+
+.color-option {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: border 0.2s ease-in-out;
+}
+
+.color-option:hover {
+    border: 2px solid #000;
+}

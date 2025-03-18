@@ -43,3 +43,30 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 });
+//배경색 바꾸기
+document.addEventListener("DOMContentLoaded", function () {
+    const menuIcon = document.querySelector(".fa-bars");
+    const colorPicker = document.getElementById("colorPicker");
+    const chatMessages = document.querySelector(".chat-messages");
+
+    // 선택창 표시
+    menuIcon.addEventListener("click", function () {
+        colorPicker.style.display = colorPicker.style.display === "block" ? "none" : "block";
+    });
+
+    // 배경 변경
+    document.querySelectorAll(".color-option").forEach(option => {
+        option.addEventListener("click", function () {
+            const selectedColor = this.getAttribute("data-color");
+            chatMessages.style.backgroundColor = selectedColor;
+            colorPicker.style.display = "none"; // 색상 선택 후 창 닫기
+        });
+    });
+
+    // 선택창 닫기
+    document.addEventListener("click", function (event) {
+        if (!menuIcon.contains(event.target) && !colorPicker.contains(event.target)) {
+            colorPicker.style.display = "none";
+        }
+    });
+});
