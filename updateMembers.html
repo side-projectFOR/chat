@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>회원탈퇴</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h2>회원탈퇴</h2>
+        <div class="warning">
+            <p>회원탈퇴 시 모든 채팅 내역이 삭제되며 복구할 수 없습니다.</p>
+            <p>정말 탈퇴하시겠습니까?</p>
+        </div>
+        
+        <form id="delete-form">
+            <input type="password" id="password" placeholder="비밀번호 확인" required>
+            <button type="submit" class="danger">탈퇴하기</button>
+        </form>
+        
+        <div class="buttons">
+            <a href="updateMembers.html">돌아가기</a>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const userIdx = localStorage.getItem('userIdx');
+            
+            if (!userIdx) {
+                alert('로그인이 필요합니다.');
+                window.location.href = 'login.html';
+                return;
+            }
+            
+            document.getElementById('delete-form').addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                const password = document.getElementById('password').value;
+                
+                if (!confirm('정말 탈퇴하시겠습니까? 이 작업은 되돌릴 수 없습니다.')) {
+                    return;
+                }
+                
+                axios.delete(`http://192.168.100.152:9221/users/${userIdx}`, {
+                    data: { password: password }
+                })
+                .then(function(response) {
+                    localStorage.removeItem('userId');
+                    localStorage.removeItem('userIdx');
+                    localStorage.removeItem('userNickname');
+                    
+                    alert('회원탈퇴가 완료되었습니다.');
+                    window.location.href = 'login.html';
+                })
+                .catch(function(error) {
+                    alert('회원탈퇴 중 오류가 발생했습니다. 비밀번호를 확인해주세요.');
+                    console.error(error);
+                });
+            });
+        });
+    </script>
+</body>
+</html>
