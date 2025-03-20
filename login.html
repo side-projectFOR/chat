@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>로그인</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h2>로그인</h2>
+        <form id="login-form">
+            <input type="text" id="username" placeholder="아이디" required>
+            <input type="password" id="password" placeholder="비밀번호" required>
+            <button type="submit">로그인</button>
+        </form>
+        <p>계정이 없으신가요? <a href="signup.html">회원가입</a></p>
+    </div>
+
+    <script>
+        $(document).ready(function() {
+            const API_URL = "http://192.168.100.152:9221";
+
+            // 이미 로그인된 경우 채팅 목록으로 이동
+            const userId = localStorage.getItem('userId');
+            if (userId) {
+                window.location.href = 'chatlist.html';
+                return;
+            }
+
+            $('#login-form').submit(function(e) {
+                e.preventDefault();
+                
+                const id = $('#username').val();
+                const pw = $('#password').val();
+                
+                axios.post(`${API_URL}/users/login`, {
+                    userId: id,
+                    userPassword: pw
+                })
+                .then(function(response) {
+                    console.log('로그인 응답:', response.data);
+                    localStorage.setItem('userIdx', response.data.userIdx);
+                    localStorage.setItem('userId', id);
+                    localStorage.setItem('userNickname', response.data.userNickname || id);
+                    
+                    alert('로그인 성공!');
+                    window.location.href = 'chatlist.html';
+                })
+                .catch(function(error) {
+                    console.error('로그인 실패:', error);
+                    alert('로그인에 실패했습니다.');
+                });
+            });
+        });
+    </script>
+</body>
+</html>
