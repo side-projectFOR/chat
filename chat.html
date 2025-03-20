@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>채팅</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sockjs-client/1.5.1/sockjs.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/stomp.js/2.3.3/stomp.min.js"></script>
+</head>
+<body>
+    <div class="chat-container">
+        <div class="chat-header">
+            <div class="profile">
+                <a href="chatlist.html">
+                    <i class="fas fa-arrow-left"></i>
+                </a>
+                <img src="profile-placeholder.jpg" alt="프로필 사진">
+                <span id="chat-recipient">대화 상대</span>
+            </div>
+            <div class="icons">
+                <i class="fas fa-search" id="search-icon"></i>
+                <i class="fas fa-bars" id="menu-icon"></i>
+            </div>
+        </div>
+        
+        <div class="chat-messages" id="chat-messages">
+            <!-- 메시지가 동적으로 추가됩니다 -->
+        </div>
+        
+        <div class="chat-input">
+            <input type="text" id="message-input" placeholder="메시지를 입력하세요...">
+            <i class="fas fa-paper-plane" id="send-button"></i>
+        </div>
+        
+        <div class="color-picker" id="colorPicker">
+            <p>배경 색상을 선택하세요</p>
+            <div class="color-options">
+                <span class="color-option" data-color="#f0f0f0" style="background-color: #f0f0f0;"></span>
+                <span class="color-option" data-color="#ffcccb" style="background-color: #ffcccb;"></span>
+                <span class="color-option" data-color="#c3e6cb" style="background-color: #c3e6cb;"></span>
+                <span class="color-option" data-color="#d1ecf1" style="background-color: #d1ecf1;"></span>
+            </div>
+        </div>
+    </div>
+
+    <script src="chat.js"></script>
+</body>
+</html>
