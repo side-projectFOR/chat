@@ -69,4 +69,34 @@ document.addEventListener("DOMContentLoaded", function () {
             colorPicker.style.display = "none";
         }
     });
+
+    const searchIcon = document.querySelector(".fa-search");
+    const searchContainer = document.getElementById("searchContainer");
+    const searchInput = document.getElementById("searchInput");
+    
+
+    // 검색창 
+    searchIcon.addEventListener("click", function () {
+        searchContainer.style.display = 
+            searchContainer.style.display === "block" ? "none" : "block";
+    });
+
+    searchInput.addEventListener("input", function () {
+        const keyword = searchInput.value.trim();
+        highlightText(keyword);
+    });
+
+    function highlightText(keyword) {
+        document.querySelectorAll(".message-content p").forEach(p => {
+            p.innerHTML = p.textContent; // HTML 태그를 제거하고 원래 텍스트로 복원
+        });
+
+        if (keyword === "") return; 
+
+        document.querySelectorAll(".message-content p").forEach(p => {
+            const text = p.textContent;
+            const regex = new RegExp(`(${keyword})`, "gi"); // 대소문자 구분 없이 검색
+            p.innerHTML = text.replace(regex, `<span class="highlight">$1</span>`);
+        });
+    }
 });

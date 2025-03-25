@@ -145,3 +145,27 @@ body {
 .color-option:hover {
     border: 2px solid #000;
 }
+
+/*검색창*/
+.search-container {
+    display: none; 
+    position: absolute;
+    top: 60px;
+    right: 10px;
+    background: white;
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.search-container input {
+    width: 150px;
+    padding: 5px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+}
+
+.highlight {
+    background-color: skyblue;
+    font-weight: bold;
+}

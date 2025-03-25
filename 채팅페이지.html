@@ -1,63 +1,66 @@
-<!DOCTYPE html>
-<html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>카카오톡 채팅</title>
-    <link rel="stylesheet" href="./style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <script src="./upload.js"></script>
-</head>
-<body>
-    <div class="chat-container">
-        <div class="chat-header">
-            <div class="profile">
-                <a href="chatlist.html">
-                <i class="fas fa-arrow-left"></i></a>
-                <img src="" alt="프로필 사진">
-                <span>친구 이름</span>
-            </div>
-            <div class="icons">
-                <i class="fas fa-search"></i>
-                <i class="fas fa-bars"></i>
-            </div>
-        </div> 
-        <div class="chat-messages">
-            <div class="message received">
-                <img src="" alt="친구 프로필 사진">
-                <div class="message-content">
-                    <p>안녕하세요!</p>
-                    <span class="timestamp">오전 10:00</span>
+    <!DOCTYPE html>
+    <html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>카카오톡 채팅</title>
+        <link rel="stylesheet" href="./style.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+        <script src="./upload.js"></script>
+    </head>
+    <body>
+        <div class="chat-container">
+            <div class="chat-header">
+                <div class="profile">
+                    <a href="chatlist.html">
+                    <i class="fas fa-arrow-left"></i></a>
+                    <img src="" alt="프로필 사진">
+                    <span>친구 이름</span>
+                </div>
+                <div class="icons">
+                    <i class="fas fa-search"></i>
+                    <div class="search-container" id="searchContainer">
+                        <input type="text" id="searchInput" placeholder="검색">
+                    </div>
+                    <i class="fas fa-bars"></i>
+                </div>
+            </div> 
+            <div class="chat-messages">
+                <div class="message received">
+                    <img src="" alt="친구 프로필 사진">
+                    <div class="message-content">
+                        <p>안녕하세요!</p>
+                        <span class="timestamp">오전 10:00</span>
+                    </div>
+                </div>
+                <div class="message sent">
+                    <div class="message-content">
+                        <p>네, 안녕하세요!</p>
+                        <span class="timestamp">오전 10:01</span>
+                    </div>
+                </div>
+                <div class="message received">
+                    <img src="" alt="친구 프로필 사진">
+                    <div class="message-content">
+                        <p>안녕하세요!</p>
+                        <span class="timestamp">오전 10:00</span>
+                    </div>
                 </div>
             </div>
-            <div class="message sent">
-                <div class="message-content">
-                    <p>네, 안녕하세요!</p>
-                    <span class="timestamp">오전 10:01</span>
-                </div>
+            <div class="chat-input">
+                <input type="text" placeholder="메시지를 입력하세요...">
+                <i class="fas fa-paper-plane"></i>
             </div>
-            <div class="message received">
-                <img src="" alt="친구 프로필 사진">
-                <div class="message-content">
-                    <p>안녕하세요!</p>
-                    <span class="timestamp">오전 10:00</span>
+            <div class="color-picker" id="colorPicker">
+                <p>배경 색상을 선택하세요</p>
+                <div class="color-options">
+                    <span class="color-option" data-color="#f0f0f0" style="background-color: #f0f0f0;"></span>
+                    <span class="color-option" data-color="#ffcccb" style="background-color: #ffcccb;"></span>
+                    <span class="color-option" data-color="#c3e6cb" style="background-color: #c3e6cb;"></span>
+                    <span class="color-option" data-color="#d1ecf1" style="background-color: #d1ecf1;"></span>
                 </div>
             </div>
         </div>
-        <div class="chat-input">
-            <input type="text" placeholder="메시지를 입력하세요...">
-            <i class="fas fa-paper-plane"></i>
-        </div>
-        <div class="color-picker" id="colorPicker">
-            <p>배경 색상을 선택하세요</p>
-            <div class="color-options">
-                <span class="color-option" data-color="#f0f0f0" style="background-color: #f0f0f0;"></span>
-                <span class="color-option" data-color="#ffcccb" style="background-color: #ffcccb;"></span>
-                <span class="color-option" data-color="#c3e6cb" style="background-color: #c3e6cb;"></span>
-                <span class="color-option" data-color="#d1ecf1" style="background-color: #d1ecf1;"></span>
-            </div>
-        </div>
-    </div>
-    <script src="https://kit.fontawesome.com/your-fontawesome-kit.js" crossorigin="anonymous"></script>
-</body>
-</html>
+        <script src="https://kit.fontawesome.com/your-fontawesome-kit.js" crossorigin="anonymous"></script>
+    </body>
+    </html>
